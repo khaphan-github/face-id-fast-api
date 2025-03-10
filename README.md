@@ -32,3 +32,4 @@ uvicorn main:app --reload
 - Biometric Identification: Access control systems.
 
 # Benchmark
+![alt text](docs/locust-chart-results.png)
