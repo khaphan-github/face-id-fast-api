@@ -1,4 +1,4 @@
-[alt text](docs/face-id-la-gi.jpg)
+![alt text](docs/face-id-la-gi.jpg)
 
 # Introduction
 This project handles registering and verifying face IDs using Python FastAPI and Milvus as a vector store, based on the Deepface-Facenet face detector model.
