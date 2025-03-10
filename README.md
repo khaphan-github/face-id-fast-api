@@ -1,6 +1,7 @@
+[alt text](docs/face-id-la-gi.jpg)
+
 # Introduction
 This project handles registering and verifying face IDs using Python FastAPI and Milvus as a vector store, based on the Deepface-Facenet face detector model.
-![alt text](docs/cach-khac-phuc-face-id-bi-loi-16.jpg.webp)
 # Install Dependencies
 ```bash
 sudo apt-get update
@@ -17,6 +18,7 @@ wget https://github.com/milvus-io/milvus/releases/download/v2.5.5/milvus-standal
 
 docker compose up -d
 ```
+![alt text](docs/highly-decoupled-architecture.png)
 
 # Start the Application
 ```bash
@@ -29,4 +31,4 @@ uvicorn main:app --reload
 - Social Media: Face tagging and recognition.
 - Biometric Identification: Access control systems.
 
-# Benchmark# face-id-fast-api
+# Benchmark
