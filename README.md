@@ -47,10 +47,12 @@ wget https://github.com/milvus-io/milvus/releases/download/v2.5.5/milvus-standal
 docker compose up -d
 ```
 ![alt text](docs/highly-decoupled-architecture.png)
+- ectd: Milvus wont's work because etcd is requrire for metadata management. but at development mode we can use sqlite instead (not recommended for production)
+- minio: Milvus won’t be able to store vector data properly because MinIO (or another object store) is required for storing vector payloads, indexes, and logs. 
 
 # Start the Application
 ```bash
-uvicorn main:app --reload
+uvicorn rest:app --reload
 ```
 
 # Applications

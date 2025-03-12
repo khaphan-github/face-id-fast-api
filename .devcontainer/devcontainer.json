@@ -10,6 +10,13 @@
 		"ghcr.io/devcontainers/features/python:1": {},
 		"ghcr.io/devcontainers-contrib/features/poetry:2": {},
 		"ghcr.io/itsmechlark/features/redis-server:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ritwickdey.LiveServer"
+			]
+		}
 	}
 
 	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
