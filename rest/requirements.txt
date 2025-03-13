@@ -11,3 +11,6 @@ python-multipart
 gunicorn
 pymilvus
 minio
+zmq
+uvicorn[standard]
+websockets

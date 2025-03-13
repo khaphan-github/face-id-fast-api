@@ -61,6 +61,14 @@ services:
       - "etcd"
       - "minio"
 
+  face_detector:
+    image: face_detector_cpp
+    ports:
+      - "5555:5555"  
+    environment:
+      - PORT=5555
+    command: ["sh", "-c", "./main"]
+
 networks:
   default:
     name: milvus

@@ -52,8 +52,8 @@ async def websocket_endpoint(websocket: WebSocket):
     '''
     await websocket.accept()
     while True:
-        data = await websocket.receive_text()  # base64 image
-        verify = await read_time_detect(data)
+        data = await websocket.receive_text()
+        verify = read_time_detect(data)
         await websocket.send_json({"verify": verify})
 
 if __name__ == "__main__":

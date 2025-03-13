@@ -34,6 +34,7 @@ This project leverages the strengths of biometric authentication to provide a hi
 ```bash
 sudo apt-get update
 sudo apt-get install -y libgl1
+pip install --upgrade pip setuptools wheel
 pip3 install -r requirements.txt --break-system-packages
 ```
 

@@ -113,7 +113,7 @@ HTML_CLIENT_SOCKET =  """
             var checkbox = document.getElementById('checkbox');
 
             // Update checkbox based on response
-            if (response.verify) {
+            if (response.verify == '1') {
                 checkbox.classList.remove('failure');
                 checkbox.classList.add('success');
             } else {
@@ -140,13 +140,13 @@ HTML_CLIENT_SOCKET =  """
             let canvas = document.getElementById('canvas');
             let ctx = canvas.getContext('2d');
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-            let imageData = canvas.toDataURL('image/png'); // Convert to Base64
+            let imageData = canvas.toDataURL('image/jpg'); // Convert to Base64
             ws.send(imageData);
         }
 
         // Start streaming images
         function startImageStreaming() {
-            setInterval(captureAndSendImage, 800); // Send an image every second
+            setInterval(captureAndSendImage, 100); // Send an image every second
         }
 
         setupCamera();
