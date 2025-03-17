@@ -14,42 +14,32 @@ app = FastAPI(
     docs_url="/",
 )
 
-
 @app.get("/mock-client")
 async def get():
     return HTMLResponse(HTML_CLIENT_SOCKET)
-
 
 @app.get("/api/v1/health")
 async def health():
     return await health_check()
 
-
 @app.post("/api/v1/fid-register")
 async def register(file: UploadFile = File(...), renew: bool = False, metadata: str = None):
     return await register_fid(file, renew, metadata)
-
 
 @app.post("/api/v1/fid-verify")
 async def verify(file: UploadFile = File(...)):
     return await verify_fid(file)
 
-
 @app.delete("/api/v2/fid-remove")
 async def remove_face_id(face_id: str):
     return await remove_fid(face_id)
-
 
 @app.delete("/api/v1/fid-remove")
 async def remove_face_id(face_id: str):
     return await remove_fid(face_id)
 
-
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
-    '''
-        TODO: Implement message broker
-    '''
     await websocket.accept()
     while True:
         data = await websocket.receive_text()

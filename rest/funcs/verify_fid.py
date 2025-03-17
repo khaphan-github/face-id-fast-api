@@ -14,8 +14,9 @@ async def verify_fid(file: UploadFile = File(...)):
         image = await cv2_img_reader(file)
         embedding = await face_detector_embedding(image)
 
-        search_result = search_face_embedding(embedding[0], top_k=1, pick=[
-                                              '_id', 'metadata', 'embedding', 'obj_storage_path'])
+        picks = ['_id', 'metadata', 'embedding', 'obj_storage_path']
+        search_result = search_face_embedding(embedding[0], top_k=1, pick=picks)
+
         if len(search_result) == 0:
             return Response(401, None, "User not found").to_dict()
 

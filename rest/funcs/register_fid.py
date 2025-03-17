@@ -22,10 +22,12 @@ async def register_fid(file: UploadFile = File(...), renew=False, metadata: str 
             return Response(400, None, "No face detected - try again please").to_dict()
 
         search_result = search_face_embedding(embedding[0], top_k=5)
+
         if len(search_result) > 0:
             return Response(409, search_result, f'User already exist').to_dict()
 
         obj_name = 'register-fid' + '-' + str(uuid.uuid4()) + '.webp'
+
         url = save_file_with_preprocess(
             object_name=obj_name,
             file=file,
